@@ -7,52 +7,19 @@ $c = new CreditCard(..);
 $user->insertCreditCard($c);
 */
 
+include 'class.php';
 
 
-class Product
-{
-    protected $name;
-    protected $description;
-    protected $price;
-    protected $qty;
-    protected $category;
+//Users
 
-    public function __construct(string $name, string $description, float $price, int $qty, string $category) {
-        $this->name = $name;
-        $this->description = $description;
-        $this->price = $price;
-        $this->qty = $qty;
-        $this->category = $category;
-    }
-    
-    
-};
+$user1 = new User('Andrei', 'Burbulia', 'ID123', 'AndreiBurbulia', 'AndreiBurbulia@email.com', 'Password01');
+$premiumUser1 = new PremiumUser ('Andrei', 'Burbulia', 'ID123', 'AndreiBurbulia', 'AndreiBurbulia@email.com', 'Password01', 3, ['a','b'], 50);
 
+var_dump($user1);
+var_dump($premiumUser1);
 
-class User
-{
-    protected $name;
-    protected $lastname;
-    protected $id;
-    protected $userName;
-    protected $email;
-    protected $password;
-
-    public function __construct(string $name, string $lastname, string $id, string $userName, string $email, string $password) {
-        $this->name = $name;
-        $this->lastname = $lastname;
-        $this->id = $id;
-        $this->userName = $userName;
-        $this->email = $email;
-        $this->password = $password;
-    }
-
-
-};
-
-
-
-
-
-
-?>
+/*
+//Products
+$product1 = new Product('Prodotto1', 'Il prodotto è una prova', 19.99, 1, 'Privata');
+var_dump($product1);
+*/
