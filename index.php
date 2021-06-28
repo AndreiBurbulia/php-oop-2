@@ -13,10 +13,17 @@ include 'class.php';
 //Users
 
 $user1 = new User('Andrei', 'Burbulia', 'ID123', 'AndreiBurbulia', 'AndreiBurbulia@email.com', 'Password01');
-$premiumUser1 = new PremiumUser ('Andrei', 'Burbulia', 'ID123', 'AndreiBurbulia', 'AndreiBurbulia@email.com', 'Password01', 3, ['a','b'], 50);
-
 var_dump($user1);
+$user1->setPassword('NuovaPassword123');
+var_dump($user1);
+var_dump($user1->getuserName());
+
+$premiumUser1 = new PremiumUser ('Andrei', 'Burbulia', 'ID123', 'AndreiBurbulia', 'AndreiBurbulia@email.com', 'Password01', 3, ['a','b'], 50);
 var_dump($premiumUser1);
+$premiumUser1->setLevel(3);
+$premiumUser1->setDiscount(15);
+var_dump($premiumUser1);
+
 
 /**/
 //Products

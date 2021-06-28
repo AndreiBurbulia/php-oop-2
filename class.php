@@ -21,6 +21,15 @@ class User
         $this->password = $password;
     }
 
+    public function getuserName()
+    {
+       return $this->userName;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
 
 };
 
@@ -38,7 +47,16 @@ class PremiumUser extends User
         $this->level = $level;
         $this->reservedCategory = $reservedCategory;
         $this->discount = $discount;
+    }
 
+    public function setLevel($level)
+    {
+        $this->level = $level;
+    }
+
+    public function setDiscount($discount)
+    {
+        $this->discount = $discount;
     }
 }
 
@@ -62,6 +80,15 @@ class Product
         $this->category = $category;
     }
     
+    public function setQuantity($qty)
+    {
+        $this->qty = $qty;
+    }
+
+    protected function setPrice($price)
+    {
+        $this->price = $price;
+    }
     
 };
 
@@ -80,6 +107,19 @@ class Laptop extends Product
         $this->model = $model;
         $this->ram = $ram;
         $this->processor = $processor;
+        $this->graphic = $graphic;
+    }
+
+    public function setRam(int $ram)
+    {
+        $this->ram = $ram;
+    }
+    public function setProcessor(string $processor)
+    {
+        $this->processor = $processor;
+    }
+    public function setGraphic(int $graphic)
+    {
         $this->graphic = $graphic;
     }
 
