@@ -44,3 +44,4 @@ var_dump($user1);
 
 $premiumUser1->addCrediCard($card1);
 var_dump($premiumUser1);
+var_dump($premiumUser1->creditCard); //non me la fa vedere perche e una variabile protetta

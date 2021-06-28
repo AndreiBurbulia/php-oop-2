@@ -66,6 +66,23 @@ class PremiumUser extends User
     }
 }
 
+//CreditCard Class
+class CreditCard
+{
+    protected $name;
+    protected $lastname;
+    protected $number;
+    protected $deadline;
+    protected $secureCode;
+
+    public function __construct(string $name, string $lastname, int $number, int $deadline, int $secureCode ) {
+        $this->name = $name;
+        $this->lastname = $lastname;
+        $this->number = $number;
+        $this->deadline = $deadline;
+        $this->secureCode = $secureCode;
+    }
+}
 
 
 
@@ -129,23 +146,4 @@ class Laptop extends Product
         $this->graphic = $graphic;
     }
 
-}
-
-
-
-class CreditCard
-{
-    protected $name;
-    protected $lastname;
-    protected $number;
-    protected $deadline;
-    protected $secureCode;
-
-    public function __construct(string $name, string $lastname, int $number, int $deadline, int $secureCode ) {
-        $this->name = $name;
-        $this->lastname = $lastname;
-        $this->number = $number;
-        $this->deadline = $deadline;
-        $this->secureCode = $secureCode;
-    }
 }
