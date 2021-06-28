@@ -18,8 +18,10 @@ $premiumUser1 = new PremiumUser ('Andrei', 'Burbulia', 'ID123', 'AndreiBurbulia'
 var_dump($user1);
 var_dump($premiumUser1);
 
-/*
+/**/
 //Products
 $product1 = new Product('Prodotto1', 'Il prodotto è una prova', 19.99, 1, 'Privata');
 var_dump($product1);
-*/
+
+$laptop1 = new Laptop('Asus Gaming Laptop', 'Best laptop for gaming', 1299, 50, 'laptop', 'Asus', 'ROG', 32, 'Intel i9', 'Asus Graphic Card');
+var_dump($laptop1);

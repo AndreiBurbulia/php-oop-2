@@ -1,25 +1,8 @@
 <?php
 
-class Product
-{
-    protected $name;
-    protected $description;
-    protected $price;
-    protected $qty;
-    protected $category;
-
-    public function __construct(string $name, string $description, float $price, int $qty, string $category) {
-        $this->name = $name;
-        $this->description = $description;
-        $this->price = $price;
-        $this->qty = $qty;
-        $this->category = $category;
-    }
-    
-    
-};
 
 
+//Simple User Class
 class User
 {
     protected $name;
@@ -41,7 +24,7 @@ class User
 
 };
 
-
+//Premium User Class
 class PremiumUser extends User 
 {
     protected $level;
@@ -57,4 +40,47 @@ class PremiumUser extends User
         $this->discount = $discount;
 
     }
+}
+
+
+
+
+
+class Product
+{
+    public $name;
+    public $description;
+    protected $price;
+    protected $qty;
+    protected $category;
+
+    public function __construct(string $name, string $description, float $price, int $qty, string $category) {
+        $this->name = $name;
+        $this->description = $description;
+        $this->price = $price;
+        $this->qty = $qty;
+        $this->category = $category;
+    }
+    
+    
+};
+
+class Laptop extends Product
+{
+    protected $make;
+    protected $model;
+    protected $ram;
+    protected $processor;
+    protected $graphic;
+
+    public function __construct(string $name, string $description, float $price, int $qty, string $category, string $make, string $model,
+    int $ram, string $processor, string $graphic) {
+        parent::__construct($name, $description, $price, $qty, $category);
+        $this->make = $make;
+        $this->model = $model;
+        $this->ram = $ram;
+        $this->processor = $processor;
+        $this->graphic = $graphic;
+    }
+
 }
