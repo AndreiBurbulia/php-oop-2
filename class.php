@@ -11,6 +11,7 @@ class User
     public $userName;
     protected $email;
     protected $password;
+    protected $creditCard;
 
     public function __construct(string $name, string $lastname, string $id, string $userName, string $email, string $password) {
         $this->name = $name;
@@ -29,6 +30,11 @@ class User
     public function setPassword($password)
     {
         $this->password = $password;
+    }
+
+    public function addCrediCard($card)
+    {
+        $this->creditCard = $card;
     }
 
 };
@@ -123,4 +129,23 @@ class Laptop extends Product
         $this->graphic = $graphic;
     }
 
+}
+
+
+
+class CreditCard
+{
+    protected $name;
+    protected $lastname;
+    protected $number;
+    protected $deadline;
+    protected $secureCode;
+
+    public function __construct(string $name, string $lastname, int $number, int $deadline, int $secureCode ) {
+        $this->name = $name;
+        $this->lastname = $lastname;
+        $this->number = $number;
+        $this->deadline = $deadline;
+        $this->secureCode = $secureCode;
+    }
 }
