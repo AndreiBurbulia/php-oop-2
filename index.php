@@ -7,7 +7,11 @@ $c = new CreditCard(..);
 $user->insertCreditCard($c);
 */
 
-include 'class.php';
+require_once __DIR__ . '/Classes/User.php';
+require_once __DIR__ . '/Classes/Product.php';
+require_once __DIR__ . '/Classes/Laptop.php';
+require_once __DIR__ . '/Classes/PremiumUser.php';
+require_once __DIR__ . '/Classes/CreditCard.php';
 
 
 //Users
@@ -36,7 +40,7 @@ $laptop1 = new Laptop('Asus Gaming Laptop', 'Best laptop for gaming', 1299, 50, 
 
 //CreditCard
 
-$card1 = new CreditCard('Andrei', 'Burbulia', 123456789, 25/11, 000);
+$card1 = new CreditCard('Andrei', 'Burbulia', 123456789, '25/11', 000);
 var_dump($card1);
 
 $user1->addCrediCard($card1);
