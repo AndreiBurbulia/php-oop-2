@@ -21,6 +21,11 @@ class Product
         $this->qty = $qty;
     }
 
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
     protected function setPrice($price)
     {
         $this->price = $price;

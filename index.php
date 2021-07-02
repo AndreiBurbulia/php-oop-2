@@ -12,40 +12,71 @@ require_once __DIR__ . '/Classes/Product.php';
 require_once __DIR__ . '/Classes/Laptop.php';
 require_once __DIR__ . '/Classes/PremiumUser.php';
 require_once __DIR__ . '/Classes/CreditCard.php';
+require_once __DIR__ . '/db.php';
 
 
 //Users
-
-$user1 = new User('Andrei', 'Burbulia', 'ID123', 'AndreiBurbulia', 'AndreiBurbulia@email.com', 'Password01');
-#var_dump($user1);
-$user1->setPassword('NuovaPassword123');
-#var_dump($user1);
-#var_dump($user1->getuserName());
-
-$premiumUser1 = new PremiumUser ('Andrei', 'Burbulia', 'ID123', 'AndreiBurbulia', 'AndreiBurbulia@email.com', 'Password01', 3, ['a','b'], 50);
-#var_dump($premiumUser1);
-$premiumUser1->setLevel(3);
-$premiumUser1->setDiscount(15);
-#var_dump($premiumUser1);
-
-
-/**/
-//Products
-$product1 = new Product('Prodotto1', 'Il prodotto è una prova', 19.99, 1, 'Privata');
-#var_dump($product1);
-
-$laptop1 = new Laptop('Asus Gaming Laptop', 'Best laptop for gaming', 1299, 50, 'laptop', 'Asus', 'ROG', 32, 'Intel i9', 'Asus Graphic Card');
-#var_dump($laptop1);
-
+$users[0]->setPassword('NuovaPassword123');
+$premiumUsers[0]->setLevel(3);
+$premiumUsers[0]->setDiscount(15);
 
 //CreditCard
+$users[1]->addCrediCard($card1);
+$premiumUsers[0]->addCrediCard($card1);
 
-$card1 = new CreditCard('Andrei', 'Burbulia', 123456789, '25/11', 000);
-var_dump($card1);
 
-$user1->addCrediCard($card1);
-var_dump($user1);
+//var_dump($users);
 
-$premiumUser1->addCrediCard($card1);
-var_dump($premiumUser1);
-var_dump($premiumUser1->creditCard); //non me la fa vedere perche e una variabile protetta
+//var_dump($premiumUsers);
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP-2</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>OOP 2</h1>
+
+    <h2>Users</h2>
+    <div class="container">
+        <?php foreach ($users as $user) : ?>
+        <div class="box">
+            <h2><?php echo $user->getName(); ?></h2>
+            <h4><?php echo $user->getLastname(); ?></h4>
+            <p><?php echo $user->getEmail(); ?></p>
+        </div>
+        <?php endforeach ?>
+
+    </div>
+
+
+
+    <h2>Product</h2>
+    <div class="container">
+        <?php foreach ($products as $product) : ?>
+        <div class="box">
+            <h2><?php echo $product->name; ?></h2>
+            <p><?php echo $product->description; ?></p>
+            <p><?php echo $product->getPrice(); ?> $</p>
+        </div>
+        <?php endforeach ?>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
